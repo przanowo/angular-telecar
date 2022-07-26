@@ -1,0 +1,17 @@
+<h2>Add mew trip</h2>
+
+<div class="formdiv">
+    <label>From</label>
+    <input type="text" [(ngModel)] = "this.service.newTrip.cityFrom" >
+
+    <label>To</label>
+    <input type="text" [(ngModel)] = "this.service.newTrip.cityTo" >
+    
+    <label>Date</label>
+    <input type="date" [(ngModel)] = "this.service.newTrip.date" >
+    
+    <label>Distance</label>
+    <input type="number" min="0" max="99999" [(ngModel)] = "this.service.newTrip.km" >
+    
+    <button (click)="this.service.createTicket()">Add trip</button>
+</div>

@@ -1,0 +1,28 @@
+<h2>Available trips</h2>
+
+<table>
+    <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Date</th>
+        <th>Distance</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th *ngIf="this.service.isLoggedIn()">Action</th>
+    </tr>
+    <tr *ngFor="let trip of this.service.trips">
+        <td [ngClass]="{'color':trip.cityFrom === 'Budapest'} ">{{trip.cityFrom}}</td>
+        <td [ngClass]="{'color':trip.cityTo === 'Budapest'} " >{{trip.cityTo}}</td>
+        <td>{{trip.date}}</td>
+        <td>{{trip.km}}</td>
+        <td>{{trip.owner.email}}</td>
+        <td>{{trip.owner.firstName}} {{trip.owner.lastName}}</td>
+        <td *ngIf="this.service.isLoggedIn()">
+            <button
+            *ngIf="this.service.isMyself(trip.owner.userName)"
+            (click)="this.service.removeTrip(trip.id)">
+            Delete</button>
+        </td>
+    </tr>
+</table>
+

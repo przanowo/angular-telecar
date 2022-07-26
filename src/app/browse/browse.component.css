@@ -1,0 +1,22 @@
+table{
+    width: 100%;
+}
+
+td, th{
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+h2{
+    margin: 25px;
+}
+
+button{
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.color{
+    background-color: rgba(255, 93, 93, .3);
+   
+}
